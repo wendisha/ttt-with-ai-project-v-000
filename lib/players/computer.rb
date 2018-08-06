@@ -26,17 +26,6 @@ module Players
             choice = cells.sample
           end
           choice
-      else 
- #When playing second, check if the center square is free, if so, take it.
-        if !board.taken?("5")
-          choice = "5"
-        else choice = cells.sample
-          until board.valid_move?(choice)
-            choice = cells.sample
-          end
-          choice
-        end
       end
-    end    
-  end
+
 end
