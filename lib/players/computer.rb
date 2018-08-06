@@ -9,7 +9,7 @@ module Players
       my_token = game.current_player.token
       their_token = my_token == "X" ? "O" : "X" 
       me = []
-      binding.pry
+      #binding.pry
       
       if board.turn_count == 0
   #Take a corner
