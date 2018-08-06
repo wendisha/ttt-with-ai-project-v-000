@@ -27,5 +27,13 @@ module Players
         choice
       end
     end
+    
+    def get_sample(arr, board)
+      result = arr.sample
+      until board.valid_move?(result)
+        result = arr.sample
+      end
+      result
+    end
   end
 end
