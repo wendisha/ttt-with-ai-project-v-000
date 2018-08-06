@@ -16,7 +16,8 @@ module Players
           choice = corners.sample
         end
         choice
-      elsif choice = cells.sample
+      else 
+        choice = cells.sample
         until board.valid_move?(choice)
           choice = cells.sample
         end
