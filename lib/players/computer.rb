@@ -21,51 +21,6 @@ module Players
           choice = corners.sample
         end
         choice
-      elsif board.turn_count == 4
-  #Check if its possible to win
-        corners_state.each_with_index do |corner, index| 
-          if corner == my_token
-            i = index + 1
-            me << i.to_s
-          end
-        end 
-        me
-        if me.include?("1") && me.include?("3") && !board.taken?("2")
-          choice = "2"
-        elsif me.include?("1") && me.include?("9") && !board.taken?("5")
-          choice = "5"
-        elsif me.include?("1") && me.include?("7") && !board.taken?("4")
-          choice = "4"
-        elsif me.include?("3") && me.include?("7") && !board.taken?("5")
-          choice = "5"
-        elsif me.include?("3") && me.include?("9") && !board.taken?("6")
-          choice = "6"
-        elsif me.include?("7") && me.include?("9") && !board.taken?("8")
-          choice = "8"
-          
-  #If it's not possible to win, it's because opponent blocked computer, so take another (or the remaining corner), forking 2 possible winning situations.
-        else 
-          choice = corners.sample
-          until board.valid_move?(choice)
-            choice = corners.sample
-          end
-          choice
-        end
-      elsif board.turn_count == 6
-  #Win!!!!!!!!!!!!!!!
-        me = corners_state.select {|corner| corner == my_token}
-        if me.include?("1") && me.include?("3") && !board.taken?("2")
-          choice = "2"
-        elsif me.include?("1") && me.include?("9") && !board.taken?("5")
-          choice = "5"
-        elsif me.include?("1") && me.include?("7") && !board.taken?("4")
-          choice = "4"
-        elsif me.include?("3") && me.include?("7") && !board.taken?("5")
-          choice = "5"
-        elsif me.include?("3") && me.include?("9") && !board.taken?("6")
-          choice = "6"
-        elsif me.include?("7") && me.include?("9") && !board.taken?("8")
-          choice = "8"
         else choice = cells.sample
           until board.valid_move?(choice)
             choice = cells.sample
