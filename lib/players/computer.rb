@@ -22,7 +22,7 @@ module Players
         choice
       elsif board.turn_count == 4
   #Check if its possible to win
-        corners_state.each_with_index do |corner| 
+        corners_state.each_with_index do |corner, index| 
           if corner == my_token
         
         
