@@ -21,31 +21,15 @@ module Players
           choice = corners.sample
         end
         choice
-        else choice = cells.sample
+      elsif choice = cells.sample
           until board.valid_move?(choice)
             choice = cells.sample
           end
           choice
-        end
       else 
  #When playing second, check if the center square is free, if so, take it.
         if !board.taken?("5")
           choice = "5"
-          them = corners_state.select {|corner| corner == their_token}
-          if them.include?("1") && me.include?("3") && !board.taken?("2")
-            choice = "2"
-          elsif them.include?("1") && me.include?("7") && !board.taken?("4")
-            choice = "4"
-          elsif them.include?("3") && me.include?("9") && !board.taken?("6")
-            choice = "6"
-          elsif them.include?("7") && me.include?("9") && !board.taken?("8")
-            choice = "8"
-          else choice = cells.sample
-            until board.valid_move?(choice)
-            choice = cells.sample
-            end
-            choice
-          end 
         else choice = cells.sample
           until board.valid_move?(choice)
             choice = cells.sample
