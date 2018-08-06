@@ -27,6 +27,8 @@ module Players
           if corner == my_token
             me << index + 1
           end
+        end 
+        me
         if me.include?("1") && me.include?("3") && !board.taken?("2")
           choice = "2"
         elsif me.include?("1") && me.include?("9") && !board.taken?("5")
