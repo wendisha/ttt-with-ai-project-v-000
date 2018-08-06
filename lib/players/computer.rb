@@ -27,5 +27,6 @@ module Players
           end
           choice
       end
+    end
 end
 end
