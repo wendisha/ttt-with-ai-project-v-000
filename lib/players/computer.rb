@@ -9,6 +9,9 @@ module Players
       if board.turn_count == 0
   #Take a corner
         choice = corners.sample
+      elsif board.turn_count == 1
+  #Take another corner
+        choice = corners.sample
       elsif board.turn_count == 2
   #Take another corner
         choice = corners.sample
