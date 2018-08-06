@@ -35,6 +35,7 @@ module Players
           choice = "6"
         elsif me.include?("7") && me.include?("9") && !board.taken?("8")
           choice = "8"
+          binding.pry
   #If it's not possible to win, it's because opponent blocked computer, so take another (or the remaining corner), forking 2 possible winning situations.
         else choice = corners.sample
           until board.valid_move?(choice)
