@@ -8,7 +8,7 @@ module Players
       corners_state = [cells[0], cells[2], cells[6], cells[8]]
       my_token = game.current_player.token
       their_token = my_token == "X" ? "O" : "X" 
-      
+      binding.pry
       
       if board.turn_count == 0
   #Take a corner
@@ -35,7 +35,7 @@ module Players
           choice = "6"
         elsif me.include?("7") && me.include?("9") && !board.taken?("8")
           choice = "8"
-          binding.pry
+          
   #If it's not possible to win, it's because opponent blocked computer, so take another (or the remaining corner), forking 2 possible winning situations.
         else choice = corners.sample
           until board.valid_move?(choice)
