@@ -8,6 +8,7 @@ module Players
       corners_state = [cells[0], cells[2], cells[6], cells[8]]
       my_token = game.current_player.token
       their_token = my_token == "X" ? "O" : "X" 
+      me = []
       binding.pry
       
       if board.turn_count == 0
@@ -24,8 +25,8 @@ module Players
   #Check if its possible to win
         corners_state.each_with_index do |corner, index| 
           if corner == my_token
-        
-        
+            me << index + 1
+          end
         if me.include?("1") && me.include?("3") && !board.taken?("2")
           choice = "2"
         elsif me.include?("1") && me.include?("9") && !board.taken?("5")
