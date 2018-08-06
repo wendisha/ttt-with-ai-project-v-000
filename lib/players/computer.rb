@@ -25,7 +25,8 @@ module Players
   #Check if its possible to win
         corners_state.each_with_index do |corner, index| 
           if corner == my_token
-            me << index + 1
+            i = index + 1
+            me << i.to_s
           end
         end 
         me
