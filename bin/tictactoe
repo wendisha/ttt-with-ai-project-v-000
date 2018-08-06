@@ -39,6 +39,6 @@ puts "Welcome to Tic Tac Toe!"
         puts "Please enter Y for yes, or N for no."
       end
     end
-end
+  end
 
 start
