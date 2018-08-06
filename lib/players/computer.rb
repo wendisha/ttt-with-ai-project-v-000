@@ -20,11 +20,7 @@ module Players
         end
         choice
       else 
-        choice = cells.sample
-        until board.valid_move?(choice)
-          choice = cells.sample
-        end
-        choice
+        get_sample((1..9).to_a, board)
       end
     end
     
