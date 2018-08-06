@@ -11,7 +11,7 @@ module Players
         choice = corners.sample
       elsif board.turn_count == 1
   #Take another corner
-        choice = corners.sample
+        return get_sample(corners, board)
       elsif board.turn_count == 2
   #Take another corner
         choice = corners.sample
