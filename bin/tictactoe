@@ -30,9 +30,9 @@ puts "Welcome to Tic Tac Toe!"
     if @game.over? == true
       puts "Want to play again? Type Y for yes and N for no."
       input_again = gets.strip
-      if input == "Y" || input_go == "y"
+      if input == "Y" || input == "y"
         start
-      elsif input == "N" || input_go == "n"
+      elsif input == "N" || input == "n"
         puts "Thanks for playing, see you soon!"
         exit
       else
